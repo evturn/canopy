@@ -1,8 +1,37 @@
 .navbar {
-  background-color: @whitesmoke;
+  background-color: @white;
+  border-bottom: 1px solid @grey;
 
-  .page-header {
+  .navbar-wrapper {
+    height: 60px;
+
+  }
+
+  .title-container {
+    float: left;
+    font-family: @serif;
+    font-weight: 800;
     font-size: 24px;
+
+    .page-header {
+      margin-top: 15px;
+    }
+  }
+
+  .hamburger-container {
+    float: right;
+    font-size: 2em;
+
+    .fa {
+      margin-top: 5px;
+      background-color: @whitesmoke;
+      height: 50px;
+      width: 50px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 20%;
+    }
+
   }
 
 }
