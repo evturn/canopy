@@ -39,7 +39,6 @@ BCCANOPY = {
     $('.search-container .fa-times').on('click', function() {
       var $container = $('.collections-container');
       var $searchContainer = $('.search-container');
-      var $searchIcon = $('.fa-search');
       var $searchInput = $('.search-input');
       var $closeIcon = $('.fa-times');
 
@@ -47,6 +46,22 @@ BCCANOPY = {
       $closeIcon.addClass('hidden');
       $container.removeClass('hidden');
       $searchContainer.removeClass('active');
+
+    });
+
+    $('.hamburger-container').on('click', function() {
+      var $hamburger = $(this);
+      var $closeIcon = $('.hamburger-container .fa-times');
+      var $openIcon = $('.hamburger-container .fa-bars');
+      var $dropdown = $('.navbar-dropdown');
+      console.log('fjdksl');
+
+      if ($hamburger.hasClass('closed')) {
+        $openIcon.toggleClass('hidden');
+        $closeIcon.toggleClass('hidden');
+        $dropdown.toggleClass('hidden');
+
+      }
 
     });
 
