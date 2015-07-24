@@ -11,7 +11,6 @@ BCCANOPY = {
       } 
       else {
         $('.collections-dropdown').addClass('hidden');
-        console.log('sup');
       }
       $container.toggleClass('closed');
       $caret.toggleClass('open');
@@ -23,7 +22,7 @@ BCCANOPY = {
       var $searchContainer = $('.search-container');
       var $searchIcon = $('.fa-search');
       var $searchInput = $('.search-input');
-      var $closeIcon = $('.fa-times');
+      var $closeIcon = $('.search-container .fa-times');
       
       if ($searchContainer.hasClass('active')) {
         return false;
