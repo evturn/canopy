@@ -17,6 +17,39 @@ BCCANOPY = {
       $caret.toggleClass('open');
     });
 
+
+    $('.fa-search').on('click', function() {
+      var $container = $('.collections-container');
+      var $searchContainer = $('.search-container');
+      var $searchIcon = $('.fa-search');
+      var $searchInput = $('.search-input');
+      var $closeIcon = $('.fa-times');
+      
+      if ($searchContainer.hasClass('active')) {
+        return false;
+      } else {
+        $container.addClass('hidden');
+        $searchContainer.addClass('active');
+        $searchInput.removeClass('hidden');
+        $closeIcon.removeClass('hidden');
+      }
+
+    });
+
+    $('.search-container .fa-times').on('click', function() {
+      var $container = $('.collections-container');
+      var $searchContainer = $('.search-container');
+      var $searchIcon = $('.fa-search');
+      var $searchInput = $('.search-input');
+      var $closeIcon = $('.fa-times');
+
+      $searchInput.addClass('hidden');
+      $closeIcon.addClass('hidden');
+      $container.removeClass('hidden');
+      $searchContainer.removeClass('active');
+
+    });
+
   }
 
 };
