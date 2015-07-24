@@ -3,6 +3,14 @@
   padding-left: 25px;
   padding-right: 25px;
 
+  @media (min-width: @md) {
+    text-align: left;
+    padding: 15px;
+    float: right;
+    display: inline-block;
+    width: 40%;
+  }
+
   .subhead {
     font-family: @serif;
     font-weight: 800;
@@ -15,11 +23,20 @@
     font-weight: 500;
     margin: 10px 20px 15px;
 
+    @media (min-width: @md) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+
   }
 
   .meta {
     font-size: 14px;
     line-height: 1.5em;
+  }
+
+  .text-container {
+    padding-top: 15px;
   }
 
   .links-container {
@@ -35,6 +52,10 @@
       font-size: 2em;
       margin-left: 20px;
       margin-right: 20px;
+      
+      @media (min-width: @md) {
+        margin-left: 0;
+      }
     }
   }
 }

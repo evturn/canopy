@@ -2,9 +2,23 @@
   padding: 0;
   margin-top: 20px;
   margin-bottom: 20px;
+  overflow: auto;
 
-  .video-main-wrapper {
+  @media (min-width: @md) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .video-container {
     .box-shadow(0px 0px 22px -4px rgba(0,0,0,0.75););
+    
+
+    @media (min-width: @md) {
+      float: left;
+      width: 55%;
+      display: inline-block;
+    }
+
   }
 
 }
