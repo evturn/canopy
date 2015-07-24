@@ -30,7 +30,7 @@ BCCANOPY = {
       } else {
         $container.addClass('hidden');
         $searchContainer.addClass('active');
-        $searchInput.removeClass('hidden');
+        $searchInput.removeClass('hidden').focus();
         $closeIcon.removeClass('hidden');
       }
 
