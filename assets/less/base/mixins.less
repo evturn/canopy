@@ -98,3 +98,11 @@
   border-bottom-left-radius: @radius;
      border-top-left-radius: @radius;
 }
+
+.transform-rotate(@degrees) {
+  -ms-transform:rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  -webkit-transform: rotate(@degrees);
+  transform: rotate(@degrees);
+}
