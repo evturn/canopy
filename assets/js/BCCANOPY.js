@@ -4,6 +4,7 @@ BCCANOPY = {
 
     $('.collections-container').on('click', function() {
       var $container = $(this);
+      var $caret = $container.find('.fa-caret-right');
 
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
@@ -13,6 +14,7 @@ BCCANOPY = {
         console.log('sup');
       }
       $container.toggleClass('closed');
+      $caret.toggleClass('open');
     });
 
   }
