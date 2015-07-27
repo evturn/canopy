@@ -1,0 +1,21 @@
+.collection-content {
+  position: relative;
+}
+
+.shadow {
+  display: none;
+  @media (min-width: @lg) {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: @black;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+  }
+}
+
+.shadow.on {
+  display: block;
+}

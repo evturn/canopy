@@ -1,15 +1,18 @@
 {{> video-main }}
 {{> collection-filter }}
-{{> category-filter }}
-<div class="container video-items">
-  <div class="wrapper">
-    {{> video-item }}
-    {{> video-item }}
-    {{> video-item }}
-    {{> video-item }}
-    {{> video-item }}
-    {{> video-item }}
+<div class="collection-content">
+  {{> category-filter }}
+  <div class="container video-items">
+    <div class="wrapper">
+      {{> video-item }}
+      {{> video-item }}
+      {{> video-item }}
+      {{> video-item }}
+      {{> video-item }}
+      {{> video-item }}
+    </div>
   </div>
+  {{> load-more }}
+  {{> footer }}
+<div class="shadow"></div>
 </div>
-{{> load-more }}
-{{> footer }}

@@ -71,16 +71,19 @@ BCCANOPY = {
       var $icons = $('.page-header .fa');
       var $dropdown = $(this).parent().next();
       var $dropdowns = $('.category-dropdown');
+      var $shadow = $('.shadow');
       
       if ($icon.hasClass('open')) {
         $icon.removeClass('open');
         $dropdown.removeClass('visible');
+        $shadow.removeClass('on');
       } 
       else {
         $dropdowns.removeClass('visible');
         $icons.removeClass('open');
         $icon.addClass('open');
         $dropdown.addClass('visible');
+        $shadow.addClass('on');
       }
     });
 
