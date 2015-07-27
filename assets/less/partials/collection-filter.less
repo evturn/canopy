@@ -1,7 +1,35 @@
 .collection-filter {
   height: 65px;
   padding: 0;
-  border-bottom: 1px solid @whitesmoke;
+  border-top: 1px solid @whitesmoke;
+
+  .mobile {
+    @media (min-width: @lg) {
+      display: none;
+    }
+  }
+
+  .desktop.hidden {
+    @media (min-width: @lg) {
+      display: block;
+      padding-left: 0;
+      padding-bottom: 0;
+      padding-top: 20px;
+
+      li {
+        display: inline-block;
+
+        ul {
+          display: none;
+        }
+      }
+
+      .page-header {
+        margin: 0 40px 0 0;
+      }
+
+    }
+  }
 
   .collections-container {
     z-index: 1;

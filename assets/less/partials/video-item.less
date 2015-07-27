@@ -1,25 +1,35 @@
 .container.video-items {
   padding: 0;
   background-color: @whitesmoke;
+  overflow: auto;
+  
   @media (min-width: @md) {
     padding-right: 15px;
     padding-left: 15px;
   }
 }
 
+.video-item:nth-child(5n) .wrapper {
+  margin-right: 0;
+}
+
 .video-item {
   background-color: @whitesmoke;
-   padding-bottom: 40px;
+  padding-bottom: 40px;
+  vertical-align: top;
 
    @media (min-width: @md) {
     width: 20%;
     padding-left: 0;
     padding-right: 0;
+    padding-bottom: 15px;
     display: inline-block;
     float: left;
 
-
-   }
+    .wrapper {
+      margin-right: 10px;
+    }
+  }
 
   .video-container {
     position: relative;

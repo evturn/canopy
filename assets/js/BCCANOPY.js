@@ -2,8 +2,8 @@ BCCANOPY = {
 
   init: function() {
 
-    $('.collections-container').on('click', function() {
-      var $container = $(this);
+    $('.collections-container .mobile').on('click', function() {
+      var $container = $('.collections-container');
       var $caret = $container.find('.fa-caret-right');
 
       if ($container.hasClass('closed')) {
