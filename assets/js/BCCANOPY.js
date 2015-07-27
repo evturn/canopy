@@ -10,12 +10,16 @@ BCCANOPY = {
 
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
+
       } 
       else {
         $('.collections-dropdown').addClass('hidden');
+
       }
+
       $container.toggleClass('closed');
       $caret.toggleClass('open');
+      
     });
 
 
@@ -28,11 +32,13 @@ BCCANOPY = {
       
       if ($searchContainer.hasClass('active')) {
         return false;
+
       } else {
         $container.addClass('hidden');
         $searchContainer.addClass('active');
         $searchInput.removeClass('hidden').focus();
         $closeIcon.removeClass('hidden');
+
       }
 
     });
@@ -77,6 +83,7 @@ BCCANOPY = {
         $icon.removeClass('open');
         $dropdown.removeClass('visible');
         $shadow.removeClass('on');
+
       } 
       else {
         $dropdowns.removeClass('visible');
@@ -84,7 +91,9 @@ BCCANOPY = {
         $icon.addClass('open');
         $dropdown.addClass('visible');
         $shadow.addClass('on');
+
       }
+
     });
 
   },
