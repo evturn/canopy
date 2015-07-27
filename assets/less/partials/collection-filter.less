@@ -18,23 +18,61 @@
 
       li {
         display: inline-block;
+        position: relative;
 
-        ul {
+        .category-dropdown {
           display: none;
 
-          .open {
+          &.visible {
+            padding: 5px;
+            min-width: 200px;
+            position: absolute;
             display: block;
+            bottom: -89px;
+            z-index: 1;
+            background-color: @white;
+          }
+
+          li:hover {
+            background-color: #94CBF4;
+            width: 100%;
+          }
+
+          a {
+            color: @black;
+            text-decoration: none;
+          }
+
+          .subhead {
+            padding-left: 0;
           }
         }
       }
 
-      .fa {
-        display: inline-block;
-      }
 
       .page-header {
         margin: 0 40px 0 0;
         display: inline-block;
+
+        a {
+          color: @black;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        .fa {
+          display: inline-block;
+          font-size: 0.6em;
+          vertical-align: middle;
+
+          &.open {
+            .transform-rotate(180deg);
+          }
+
+        }
       }
 
     }

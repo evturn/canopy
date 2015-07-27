@@ -66,7 +66,26 @@ BCCANOPY = {
 
     });
 
+    $('.page-header .fa').on('mousedown', function() {
+      var $icon = $(this);
+      var $icons = $('.page-header .fa');
+      var $dropdown = $(this).parent().next();
+      var $dropdowns = $('.category-dropdown');
+      
+      if ($icon.hasClass('open')) {
+        $icon.removeClass('open');
+        $dropdown.removeClass('visible');
+      } 
+      else {
+        $dropdowns.removeClass('visible');
+        $icons.removeClass('open');
+        $icon.addClass('open');
+        $dropdown.addClass('visible');
+      }
+    });
+
   },
+
 
   appendCaret: function() {
     var $categoryDropdown = $('.category-dropdown');
