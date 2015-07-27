@@ -14,7 +14,7 @@ gulp.task('watch', function() {
   gulp.watch(paths.less.watch, ['less', 'reloader']);
   gulp.watch(paths.jshint.watch, ['lint', 'reloader']);
   gulp.watch(paths.js.watch, ['js', 'reloader']);
-  gulp.watch('./views/**/*.hbs').on('change', browserSync.reload);
+  gulp.watch(paths.views.watch).on('change', browserSync.reload);
 });
 
 gulp.task('less', function() {

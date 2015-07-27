@@ -1,10 +1,17 @@
 module.exports = {
+
+  views: {
+    src: './views/**/*.hbs',
+    watch: './views/**/*.hbs'
+  },
+
   less: {
     src: 'assets/less/*.less',
     watch: 'assets/less/**/*.less',
     dest: 'dist/css',
     filename: 'less.css'
   },
+
   css: {
     src: [
       'assets/css/animate.css',
@@ -13,6 +20,7 @@ module.exports = {
     dest: 'dist/css',
     filename: 'style.css'
   },
+
   js: {
     src: [
       'assets/js/**/*.js',
@@ -32,6 +40,7 @@ module.exports = {
       filename: 'vendor.js'
     }
   },
+
   jshint: {
     src: [
       'assets/js/**/*.js',
@@ -50,4 +59,5 @@ module.exports = {
       'server.js'
     ]
   }
+
 };
