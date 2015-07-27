@@ -2,6 +2,8 @@ BCCANOPY = {
 
   init: function() {
 
+    BCCANOPY.appendCaret();
+
     $('.collections-container .mobile').on('click', function() {
       var $container = $('.collections-container');
       var $caret = $container.find('.fa-caret-right');
@@ -64,7 +66,15 @@ BCCANOPY = {
 
     });
 
+  },
+
+  appendCaret: function() {
+    var $categoryDropdown = $('.category-dropdown');
+    var $category = $categoryDropdown.parent().find('.page-header');
+    
+    $category.append(' <i class="fa fa-chevron-down"></i>');
   }
+
 
 };
 
