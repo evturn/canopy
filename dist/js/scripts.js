@@ -82,6 +82,7 @@ BCCANOPY = {
       if ($icon.hasClass('open')) {
         $icon.removeClass('open');
         $dropdown.removeClass('visible');
+        $icon.parent().removeClass('selected');
         $shadow.removeClass('on');
 
       } 
@@ -89,7 +90,9 @@ BCCANOPY = {
         $dropdowns.removeClass('visible');
         $icons.removeClass('open');
         $icon.addClass('open');
+        $icons.parent().removeClass('selected');
         $dropdown.addClass('visible');
+        $icon.parent().addClass('selected');
         $shadow.addClass('on');
 
       }
@@ -97,6 +100,8 @@ BCCANOPY = {
     });
 
   },
+
+
 
 
   appendCaret: function() {
