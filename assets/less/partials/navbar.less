@@ -5,11 +5,30 @@
 
   @media (min-width: @md) {
     border-bottom: 0;
+
+    .navbar-dropdown {
+      display: inline-block;
+      float: right;
+      width: auto;
+
+      li {
+        display: inline-block;
+        text-align: right;
+        margin-left: 25px;
+      }
+    }
+
+
   }
   
   
   .navbar-header {
     overflow: auto;
+
+    @media (min-width: @md) {
+      float: left;
+      display: inline-block;
+    }
   }
 
   .title-container {
@@ -28,6 +47,11 @@
     font-size: 2em;
     margin-top: 5px;
     margin-bottom: 10px;
+
+
+    @media (min-width: @md) {
+      display: none;
+    }
 
     .fa {
       cursor: pointer;
