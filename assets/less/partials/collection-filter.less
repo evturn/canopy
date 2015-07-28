@@ -3,7 +3,6 @@
   padding: 0;
   border-top: 1px solid @whitesmoke;
   position: relative;
-  
 
   .mobile {
     @media (min-width: @lg) {
@@ -12,7 +11,6 @@
   }
 
   .desktop.hidden {
-
     @media (min-width: @lg) {
       display: block;
       padding-left: 0;
@@ -22,11 +20,13 @@
       li {
         display: inline-block;
         position: relative;
+        z-index: 3;
 
         .category-dropdown {
           display: none;
 
           &.visible {
+            .box-shadow(0px 0px 22px -4px rgba(0,0,0,0.75););
             padding: 5px;
             position: absolute;
             display: block;
@@ -48,12 +48,11 @@
           li {
             min-width: 350px;
             height: 50px;
-            
           }
 
           .subhead {
             padding-top: 7.5px;
-            padding-left: 15px;
+            padding-left: 25px;
           }
         }
       }
