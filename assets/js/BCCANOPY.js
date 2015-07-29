@@ -116,8 +116,6 @@ BCCANOPY = {
     var $icons = $('.page-header .fa.resize');
     var $dropdown = $icon.parent().next();
     var $dropdowns = $('.category-dropdown');
-      
-    console.log($icon);
 
       if ($icon.hasClass('open')) {
         $icon.removeClass('open');
