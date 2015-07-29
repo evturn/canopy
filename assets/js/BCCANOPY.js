@@ -9,6 +9,7 @@ BCCANOPY = {
       var $container = $('.collections-container');
       var $caret = $container.find('.fa-caret-right');
       var $shadow = $('.shadow');
+      var $header = $('.page-header.mobile.resize');
 
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
@@ -23,6 +24,8 @@ BCCANOPY = {
 
       $container.toggleClass('closed');
       $caret.toggleClass('open');
+      $header.toggleClass('selected');
+
 
     });
 
@@ -111,7 +114,7 @@ BCCANOPY = {
   },
 
   resizeSubcategoryDropdowns: function() {
-    console.log('resize dropdowns');
+    
   },
 
   appendCaret: function() {
