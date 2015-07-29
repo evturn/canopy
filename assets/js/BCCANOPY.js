@@ -110,15 +110,27 @@ BCCANOPY = {
   },
 
   resizeCollectionsNav: function() {
+    var windowWidth = $(window).width();
     var listHeight = $('.collections-dropdown').height();
     var breakpoint = 25;
+    var $container = $('.collections-container');
+    var $header = $('.collections-container .mobile');
+    var $ul = $('.desktop.hidden');
 
     console.log(listHeight);
 
-    if (listHeight > breakpoint) {
-      console.log('it is');
+    if (listHeight > breakpoint && windowWidth > 1200) {
+
+      $container.addClass('resize');
+      $header.addClass('resize');
+      $ul.addClass('resize');
+
+
     } else {
       console.log('it is not');
+      $container.removeClass('resize');
+      $header.removeClass('resize');
+      $ul.removeClass('resize');
     }
   },
 
