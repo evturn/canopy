@@ -77,15 +77,15 @@ BCCANOPY = {
 
     });
 
-    $('.page-header .fa').on('mousedown', function(e) {
-      var $icon = $(this);
+    $('.page-header').on('mousedown', function() {
+      var $icon = $(this).find('.fa');
       var $icons = $('.page-header .fa');
       var $dropdown = $(this).parent().next();
       var $dropdowns = $('.category-dropdown');
       var $shadow = $('.shadow');
-      
+
       if ($icon.hasClass('resize')) {
-        BCCANOPY.resizeSubcategoryDropdowns(e);
+        BCCANOPY.resizeSubcategoryDropdowns($icon);
         return false;
       }
 
@@ -111,10 +111,10 @@ BCCANOPY = {
 
   },
 
-  resizeSubcategoryDropdowns: function(e) {
-    var $icon = $(e.currentTarget);
+  resizeSubcategoryDropdowns: function(caret) {
+    var $icon = caret;
     var $icons = $('.page-header .fa.resize');
-    var $dropdown = $(e.currentTarget).parent().next();
+    var $dropdown = $icon.parent().next();
     var $dropdowns = $('.category-dropdown');
       
     console.log($icon);

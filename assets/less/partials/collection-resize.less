@@ -42,6 +42,16 @@
               .transform-rotate(180deg);
             }
           }
+
+          a {
+            text-decoration: none;
+            color: @black;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
         }
 
         .category-dropdown {
@@ -51,6 +61,7 @@
           bottom: 10px;
           z-index: 4;
           background-color: @white;
+          .box-shadow(0px 0px 22px -4px rgba(0,0,0,0.75););
 
           &.visible {
             display: block;
