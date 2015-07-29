@@ -80,6 +80,11 @@ BCCANOPY = {
       var $dropdowns = $('.category-dropdown');
       var $shadow = $('.shadow');
       
+      if ($icon.hasClass('resize')) {
+        BCCANOPY.resizeSubcategoryDropdowns();
+        return false;
+      }
+
       if ($icon.hasClass('open')) {
         $icon.removeClass('open');
         $dropdown.removeClass('visible');
@@ -102,6 +107,10 @@ BCCANOPY = {
 
   },
 
+  resizeSubcategoryDropdowns: function() {
+    console.log('resize dropdowns');
+  },
+
   appendCaret: function() {
     var $categoryDropdown = $('.category-dropdown');
     var $category = $categoryDropdown.parent().find('.page-header');
@@ -116,18 +125,21 @@ BCCANOPY = {
     var $container = $('.collections-container');
     var $header = $('.collections-container .mobile');
     var $ul = $('.desktop.hidden');
+    var $caret = $('.collections-dropdown .page-header .fa');
 
     console.log(listHeight);
 
     if (listHeight > breakpoint && windowWidth > 1200) {
 
-      $container.addClass('resize');
+      $caret.addClass('resize');
       $header.addClass('resize');
       $ul.addClass('resize');
+      $container.addClass('resize');
 
 
     } else {
-      console.log('it is not');
+
+      $caret.removeClass('resize');
       $container.removeClass('resize');
       $header.removeClass('resize');
       $ul.removeClass('resize');
