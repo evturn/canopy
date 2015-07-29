@@ -14,17 +14,17 @@ BCCANOPY = {
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
         $shadow.addClass('on');
-
+        $header.addClass('selected');
       } 
       else {
         $('.collections-dropdown').addClass('hidden');
         $shadow.removeClass('on');
-
+        $header.removeClass('selected');
       }
 
       $container.toggleClass('closed');
       $caret.toggleClass('open');
-      $header.toggleClass('selected');
+      
 
     });
 
