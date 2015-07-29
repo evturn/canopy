@@ -121,7 +121,6 @@ BCCANOPY = {
         $icon.removeClass('open');
         $dropdown.removeClass('visible');
         $icon.parent().removeClass('selected');
-        
 
       } 
       else {
@@ -146,14 +145,13 @@ BCCANOPY = {
   resizeCollectionsNav: function() {
     var windowWidth = $(window).width();
     var listHeight = $('.collections-dropdown').height();
-    var breakpoint = 25;
     var $container = $('.collections-container');
     var $header = $('.collections-container .mobile');
     var $ul = $('.desktop.hidden');
     var $caret = $('.collections-dropdown .page-header .fa');
+    var breakpoint = 25;
 
     if (listHeight > breakpoint && windowWidth > 1200) {
-
       $caret.addClass('resize');
       $header.addClass('resize');
       $ul.addClass('resize');
@@ -171,10 +169,7 @@ BCCANOPY = {
   resizeNavbar: function() {
     var navbarWidth = $('.navbar-dropdown ul').width();
     var windowWidth = $(window).width();
-    console.log(navbarWidth);
-    console.log(windowWidth);
     var breakpoint = 700;
-    console.log(breakpoint);
     var $navbar = $('.navbar');
     var $navbarDropdown = $('.navbar-dropdown');
     
@@ -183,7 +178,6 @@ BCCANOPY = {
       $navbarDropdown.addClass('resize');
     }
   },
-
 
 };
 

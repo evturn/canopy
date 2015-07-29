@@ -6,3 +6,5 @@
 -collections navbar 3 stages - mobile / desktop / too many
 
 + main video and navbar fixed on scroll
+
+-Set height on canopy for breakpoints and add that to padding-top on collections content
