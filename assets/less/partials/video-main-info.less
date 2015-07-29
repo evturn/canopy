@@ -5,10 +5,14 @@
 
   @media (min-width: @md) {
     text-align: left;
-    padding: 15px;
+    padding: 0 15px 0;
     float: right;
     display: inline-block;
-    width: 38%;
+    width: 45%
+  }
+
+  @media (min-width: 1000px) {
+    padding: 15px;
   }
 
   .subhead {
@@ -37,6 +41,16 @@
 
   .text-container {
     padding-top: 15px;
+    
+    @media (min-width: @md) {
+      padding-top: 0;
+    }
+
+
+    @media (min-width: @lg) {
+      padding-right: 25%;
+      padding-top: 15px;
+    }
   }
 
   .links-container {
