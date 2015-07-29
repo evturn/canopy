@@ -26,7 +26,6 @@ BCCANOPY = {
       $caret.toggleClass('open');
       $header.toggleClass('selected');
 
-
     });
 
 
@@ -68,7 +67,6 @@ BCCANOPY = {
       var $closeIcon = $('.hamburger-container .fa-times');
       var $openIcon = $('.hamburger-container .fa-bars');
       var $dropdown = $('.navbar-dropdown');
-      console.log('fjdksl');
 
       if ($hamburger.hasClass('closed')) {
         $openIcon.toggleClass('hidden');
@@ -79,7 +77,7 @@ BCCANOPY = {
 
     });
 
-    $('.page-header .fa').on('mousedown', function() {
+    $('.page-header .fa').on('mousedown', function(e) {
       var $icon = $(this);
       var $icons = $('.page-header .fa');
       var $dropdown = $(this).parent().next();
@@ -87,7 +85,7 @@ BCCANOPY = {
       var $shadow = $('.shadow');
       
       if ($icon.hasClass('resize')) {
-        BCCANOPY.resizeSubcategoryDropdowns();
+        BCCANOPY.resizeSubcategoryDropdowns(e);
         return false;
       }
 
@@ -113,8 +111,31 @@ BCCANOPY = {
 
   },
 
-  resizeSubcategoryDropdowns: function() {
-    
+  resizeSubcategoryDropdowns: function(e) {
+    var $icon = $(e.currentTarget);
+    var $icons = $('.page-header .fa.resize');
+    var $dropdown = $(e.currentTarget).parent().next();
+    var $dropdowns = $('.category-dropdown');
+      
+    console.log($icon);
+
+      if ($icon.hasClass('open')) {
+        $icon.removeClass('open');
+        $dropdown.removeClass('visible');
+        $icon.parent().removeClass('selected');
+        
+
+      } 
+      else {
+        $dropdowns.removeClass('visible');
+        $icons.removeClass('open');
+        $icon.addClass('open');
+        $icons.parent().removeClass('selected');
+        $dropdown.addClass('visible');
+        $icon.parent().addClass('selected');
+
+      }
+
   },
 
   appendCaret: function() {
@@ -133,17 +154,14 @@ BCCANOPY = {
     var $ul = $('.desktop.hidden');
     var $caret = $('.collections-dropdown .page-header .fa');
 
-    console.log(listHeight);
-
     if (listHeight > breakpoint && windowWidth > 1200) {
 
       $caret.addClass('resize');
       $header.addClass('resize');
       $ul.addClass('resize');
       $container.addClass('resize');
-
-
-    } else {
+    }
+    else {
 
       $caret.removeClass('resize');
       $container.removeClass('resize');

@@ -23,9 +23,10 @@
     }
 
     .collections-dropdown.desktop.resize {
-
+      width: 100%;
       bottom: -243px;
-    
+      padding-left: 15px;
+
       li {
         display: inline-block;
         margin-right: 25px;
@@ -39,9 +40,37 @@
           }
         }
 
-        li {
+        .category-dropdown {
+          padding: 5px;
+          position: absolute;
           display: none;
+          bottom: 10px;
+          z-index: 4;
+          background-color: @white;
 
+          &.visible {
+            display: block;
+          }
+          li:hover {
+            background-color: #94CBF4;
+            width: 100%;
+          }
+
+          a {
+            color: @black;
+            text-decoration: none;
+          }
+
+          li {
+            display: block;
+            min-width: 350px;
+            height: 50px;
+          }
+
+          .subhead {
+            padding-top: 7.5px;
+            padding-left: 25px;
+          }
         }
 
       }
