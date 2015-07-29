@@ -1,9 +1,9 @@
 BCCANOPY = {
 
   init: function() {
-
     BCCANOPY.appendCaret();
     BCCANOPY.resizeCollectionsNav();
+    BCCANOPY.resizeNavbar();
 
     $('.collections-container .mobile').on('click', function() {
       var $container = $('.collections-container');
@@ -13,18 +13,18 @@ BCCANOPY = {
 
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
+        $container.removeClass('closed');
         $shadow.addClass('on');
         $header.addClass('selected');
+        $caret.addClass('open');
       } 
       else {
         $('.collections-dropdown').addClass('hidden');
+        $container.addClass('closed');
         $shadow.removeClass('on');
         $header.removeClass('selected');
+        $caret.removeClass('open');
       }
-
-      $container.toggleClass('closed');
-      $caret.toggleClass('open');
-      
 
     });
 
@@ -168,6 +168,22 @@ BCCANOPY = {
     }
   },
 
+  resizeNavbar: function() {
+    var navbarWidth = $('.navbar-dropdown ul').width();
+    var windowWidth = $(window).width();
+    console.log(navbarWidth);
+    console.log(windowWidth);
+    var breakpoint = 700;
+    console.log(breakpoint);
+    var $navbar = $('.navbar');
+    var $navbarDropdown = $('.navbar-dropdown');
+    
+    if (navbarWidth > breakpoint) {
+      $navbar.addClass('resize');
+      $navbarDropdown.addClass('resize');
+    }
+  },
+
 
 };
 
@@ -177,4 +193,5 @@ $(document).ready(function() {
 
 $(window).resize(function () {
   BCCANOPY.resizeCollectionsNav();
+  BCCANOPY.resizeNavbar();
 });
