@@ -8,13 +8,16 @@ BCCANOPY = {
     $('.collections-container .mobile').on('click', function() {
       var $container = $('.collections-container');
       var $caret = $container.find('.fa-caret-right');
+      var $shadow = $('.shadow');
 
       if ($container.hasClass('closed')) {
         $('.collections-dropdown').removeClass('hidden');
+        $shadow.addClass('on');
 
       } 
       else {
         $('.collections-dropdown').addClass('hidden');
+        $shadow.removeClass('on');
 
       }
 
