@@ -3,6 +3,7 @@ BCCANOPY = {
   init: function() {
 
     BCCANOPY.appendCaret();
+    BCCANOPY.resizeCollectionsNav();
 
     $('.collections-container .mobile').on('click', function() {
       var $container = $('.collections-container');
@@ -19,7 +20,7 @@ BCCANOPY = {
 
       $container.toggleClass('closed');
       $caret.toggleClass('open');
-      
+
     });
 
 
@@ -101,19 +102,33 @@ BCCANOPY = {
 
   },
 
-
-
-
   appendCaret: function() {
     var $categoryDropdown = $('.category-dropdown');
     var $category = $categoryDropdown.parent().find('.page-header');
     
     $category.append(' <i class="fa fa-chevron-down"></i>');
-  }
+  },
+
+  resizeCollectionsNav: function() {
+    var listHeight = $('.collections-dropdown').height();
+    var breakpoint = 25;
+
+    console.log(listHeight);
+
+    if (listHeight > breakpoint) {
+      console.log('it is');
+    } else {
+      console.log('it is not');
+    }
+  },
 
 
 };
 
 $(document).ready(function() {
   BCCANOPY.init();
+});
+
+$(window).resize(function () {
+  BCCANOPY.resizeCollectionsNav();
 });
