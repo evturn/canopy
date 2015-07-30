@@ -114,15 +114,16 @@ BCCANOPY = {
     var $ul = $('.collections-list');
     var $inlineContainer = $('.collections-container');
     var windowWidth = $(window).width();
-    var ulHeight = $ul.height();
+    var ulHeight = $ul.width();
+    console.log(ulHeight);
 
-    if (ulHeight > 25 && windowWidth > 800) {
+    if (ulHeight > 900 && windowWidth > 800) {
       $ul.detach();
       $outsideContainer.append($ul);
       $titleContainer.addClass('resize-visible');
       $titleContainer.css({'display': 'inline-block'});
     } 
-    else if (ulHeight > 25 && windowWidth < 800) {
+    else if (ulHeight > 900 && windowWidth < 800) {
       $ul.detach();
       $titleContainer.removeClass('resize-visible');
       $inlineContainer.append($ul);
