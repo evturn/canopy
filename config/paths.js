@@ -23,7 +23,11 @@ module.exports = {
 
   js: {
     src: [
-      'assets/js/**/*.js',
+      'assets/js/BCCANOPY.js',
+      'assets/js/site-navbar.js',
+      'assets/js/canopy-search.js',
+      'assets/js/canopy-collections.js',
+      'assets/js/init.js',
       '!assets/js/vendor/**/*.js'
     ],
     watch: [
