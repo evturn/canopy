@@ -108,6 +108,7 @@ a {
       display: inline-block;
       margin-left: 0;
       margin-bottom: 0;
+      position: relative;
     }
 
     .sub-cat li {
@@ -117,6 +118,12 @@ a {
 
   .cat-title {
     margin-right: 20px;
+    padding-right: -20px;
+    margin-bottom: -26px;
+    padding-bottom: 26px;
+    margin-left: -10px;
+    padding-left: 10px;
+    background: transparent;
 
     .fa {
       display: inline-block;
@@ -134,9 +141,8 @@ a {
   }
 
   .selected .cat-title {
-    margin-bottom: -26px;
-    padding-bottom: 26px;
-    background-color: white;
+
+    background-color: @white;
   }
 
   .selected .sub-cat {
@@ -144,7 +150,8 @@ a {
     display: block;
     z-index: 2;
     font-size: 18px;
-    top: 65px;
+    top: 50px;
+    left: -10px;
     background-color: @white;
 
     li {
