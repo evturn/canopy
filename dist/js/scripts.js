@@ -137,11 +137,10 @@ BCCANOPY.collections = {
       var $dropdowns = $('.sub-cat');
       var $shadow = $('.shadow');
 
-      
-
       if ($category.has('.fa').length) {
 
         if ($icon.hasClass('open')) {
+
           $icon.removeClass('open');
           $icon.parent().parent().removeClass('selected');
             
@@ -150,6 +149,7 @@ BCCANOPY.collections = {
             }
         } 
         else {
+
           $icons.removeClass('open');
           $icon.addClass('open');
           $('li').removeClass('selected');
@@ -174,10 +174,12 @@ BCCANOPY.collections = {
     console.log(ulHeight);
 
     if (ulHeight > 900 && windowWidth > 800) {
+
       $ul.detach();
       $outsideContainer.append($ul);
       $titleContainer.addClass('resize-visible');
       $titleContainer.css({'display': 'inline-block'});
+
     } 
     else {
       BCCANOPY.collections.ignoreResize();
@@ -191,13 +193,13 @@ BCCANOPY.collections = {
     var $ul = $('.collections-list');
     var $inlineContainer = $('.collections-container');
     var windowWidth = $(window).width();
-    
-    console.log('Ignoring');
 
     if (windowWidth < 800) {
+
       $ul.detach();
       $titleContainer.removeClass('resize-visible');
       $inlineContainer.append($ul);
+
     }
   },
 
