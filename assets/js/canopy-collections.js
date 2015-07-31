@@ -47,27 +47,32 @@ BCCANOPY.collections = {
       var $dropdowns = $('.sub-cat');
       var $shadow = $('.shadow');
 
+      
+
       if ($category.has('.fa').length) {
 
         if ($icon.hasClass('open')) {
           $icon.removeClass('open');
           $icon.parent().parent().removeClass('selected');
-          $shadow.removeClass('on');
-
+            
+            if ($category.parents('.collections-resize').length === 0) {
+              $shadow.removeClass('on');
+            }
         } 
         else {
           $icons.removeClass('open');
           $icon.addClass('open');
           $('li').removeClass('selected');
           $icon.parent().parent().addClass('selected');
-          $shadow.addClass('on');
 
+          if ($category.parents('.collections-resize').length === 0) {
+            $shadow.addClass('on');
+          }
         }
       }
 
     });
   },
-
 
   detachAndAppendList: function() {
     var $titleContainer = $('.title-container');
