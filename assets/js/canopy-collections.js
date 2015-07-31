@@ -38,28 +38,32 @@ BCCANOPY.collections = {
   toggleSubcategory: function() {
 
     $('.cat-title').on('mousedown', function() {
+      var $category = $(this);
       var $icon = $(this).find('.fa');
       var $icons = $('.cat-title .fa');
       var $dropdown = $(this).parent().next();
       var $dropdowns = $('.sub-cat');
       var $shadow = $('.shadow');
 
-      if ($icon.hasClass('open')) {
-        $icon.removeClass('open');
-        $dropdown.removeClass('visible');
-        $icon.parent().parent().removeClass('selected');
-        $shadow.removeClass('on');
+      if ($category.has('.fa').length) {
 
-      } 
-      else {
-        $dropdowns.removeClass('visible');
-        $icons.removeClass('open');
-        $icon.addClass('open');
-        $icons.parent().removeClass('selected');
-        $dropdown.addClass('visible');
-        $icon.parent().parent().addClass('selected');
-        $shadow.addClass('on');
+        if ($icon.hasClass('open')) {
+          $icon.removeClass('open');
+          $dropdown.removeClass('visible');
+          $icon.parent().parent().removeClass('selected');
+          $shadow.removeClass('on');
 
+        } 
+        else {
+          $dropdowns.removeClass('visible');
+          $icons.removeClass('open');
+          $icon.addClass('open');
+          $icons.parent().removeClass('selected');
+          $dropdown.addClass('visible');
+          $icon.parent().parent().addClass('selected');
+          $shadow.addClass('on');
+
+        }
       }
 
     });
