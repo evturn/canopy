@@ -1,6 +1,10 @@
 .collections-container {
   float: left;
   font-family: @serif;
+  width: 80%;
+  margin-left: -15px;
+  padding-left: 15px;
+  background-color: white;
 }
 
 
@@ -39,6 +43,7 @@
     position: absolute;
     z-index: 3;
     width: 80%;
+    padding-left: 15px;
     top: 50px;
     left: -15px;
   }
@@ -82,11 +87,23 @@ a {
   .title-container {
     height: 40px;
   }
+
+  .collections-container.uncollapsed {
+    margin-bottom: -26px;
+    padding-bottom: 26px;
+    background-color: @white;
+  }
+
+  .collections-container.collapsed {
+    margin-bottom: -26px;
+    padding-bottom: 26px;
+    background: transparent; 
+  }
 }
 
 
 // Desktop
- @media (min-width: @lg) {
+ @media (min-width: 1000px) {
 
   .title-container {
     display: none;

@@ -5,6 +5,29 @@ BCCANOPY.collections = {
     BCCANOPY.collections.toggleSubcategory();
     BCCANOPY.collections.detachAndAppendList();
     BCCANOPY.collections.appendCaretToParent();
+    BCCANOPY.collections.highlightTitleContainer();
+  },
+
+
+  highlightTitleContainer: function() {
+
+    $('.collections-container .title-container').on('click', function() {
+      var $collectionsContainer = $('.collections-container');
+      var $ul = $('.collections-list');
+      var $titleContainer = $('.title-container');
+
+      console.log($ul.parents($collectionsContainer));
+
+      if ($ul.parents($collectionsContainer) && $titleContainer.hasClass('closed')) {
+        $collectionsContainer.removeClass('uncollapsed');
+        $collectionsContainer.addClass('collapsed');
+      } 
+      else if ($ul.parents($collectionsContainer)) {
+        $collectionsContainer.removeClass('collapsed');
+        $collectionsContainer.addClass('uncollapsed');
+      }
+
+    });
   },
 
   toggleOnCollectionsTitle: function() {
