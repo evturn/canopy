@@ -105,6 +105,8 @@ BCCANOPY.collections = {
       var $shadow = $('.shadow');
       var $list = $('.collections-list');
 
+      BCCANOPY.collections.ignoreResize();
+
       if ($container.hasClass('closed')) {
         
         $container.removeClass('closed');
@@ -172,12 +174,26 @@ BCCANOPY.collections = {
       $titleContainer.addClass('resize-visible');
       $titleContainer.css({'display': 'inline-block'});
     } 
-    else if (ulHeight > 900 && windowWidth < 800) {
+    else {
+      BCCANOPY.collections.ignoreResize();
+    }
+
+  },
+
+  ignoreResize: function() {
+    var $titleContainer = $('.title-container');
+    var $outsideContainer = $('.collections-resize');
+    var $ul = $('.collections-list');
+    var $inlineContainer = $('.collections-container');
+    var windowWidth = $(window).width();
+    
+    console.log('Ignoring');
+
+    if (windowWidth < 800) {
       $ul.detach();
       $titleContainer.removeClass('resize-visible');
       $inlineContainer.append($ul);
     }
-
   },
 
   appendCaretToParent: function() {
