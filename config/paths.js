@@ -24,6 +24,7 @@ module.exports = {
   js: {
     src: [
       'assets/js/BCCANOPY.js',
+      'assets/js/grid.js',
       'assets/js/site-navbar.js',
       'assets/js/canopy-search.js',
       'assets/js/canopy-collections.js',

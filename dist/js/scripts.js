@@ -1,4 +1,31 @@
 var BCCANOPY = {};
+BCCANOPY.grid = {
+  
+  init: function() {
+    BCCANOPY.grid.setGridPaddingTop();
+  },
+
+  getCanopyHeight: function() {
+    var canopy = $('.canopy').height();
+    var overflow = $('.overflow-bottom').height();
+
+    return canopy + overflow;
+  },
+
+  setGridPaddingTop: function() {
+    var padding = BCCANOPY.grid.getCanopyHeight();
+    var grid = $('.collection-content');
+
+    if ($(window).width() >= 800) {
+      grid.css({'paddingTop': padding});
+    } 
+    else {
+      grid.css({'paddingTop': 0});
+    }
+
+  },
+
+};
 BCCANOPY.navbar = {
 
   init: function() {
@@ -215,9 +242,11 @@ $(document).ready(function() {
   BCCANOPY.navbar.init();
   BCCANOPY.search.init();
   BCCANOPY.collections.init();
+  BCCANOPY.grid.init();
 });
 
 $(window).resize(function () {
   BCCANOPY.navbar.resize();
   BCCANOPY.collections.detachAndAppendList();
+  BCCANOPY.grid.init();
 });
