@@ -41,7 +41,7 @@ BCCANOPY.collections = {
       var $category = $(this);
       var $icon = $(this).find('.fa');
       var $icons = $('.cat-title .fa');
-      var $dropdown = $(this).parent().next();
+      var $dropdown = $(this).find('.sub-cat');
       var $dropdowns = $('.sub-cat');
       var $shadow = $('.shadow');
 
@@ -49,17 +49,14 @@ BCCANOPY.collections = {
 
         if ($icon.hasClass('open')) {
           $icon.removeClass('open');
-          $dropdown.removeClass('visible');
           $icon.parent().parent().removeClass('selected');
           $shadow.removeClass('on');
 
         } 
         else {
-          $dropdowns.removeClass('visible');
           $icons.removeClass('open');
           $icon.addClass('open');
-          $icons.parent().removeClass('selected');
-          $dropdown.addClass('visible');
+          $('li').removeClass('selected');
           $icon.parent().parent().addClass('selected');
           $shadow.addClass('on');
 
