@@ -7,5 +7,6 @@
 +Set height on canopy for breakpoints and add that to padding-top on collections content
 +margin canopy vs. grid
 +click category for container
++extend collections-resize to fill window width
 
--extend collections-resize to fill window width
+-searchbar on desktop view

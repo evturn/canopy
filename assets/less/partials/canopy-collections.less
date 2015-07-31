@@ -7,6 +7,10 @@
   background-color: white;
 }
 
+.collections-container.uncollapsed {
+  .box-shadow( 1px 4px 6px 0px rgba(0,0,0,0.75););
+}
+
 
 // Mobile
 .title-container {
@@ -39,6 +43,7 @@
   background-color: @white;
   
   &.visible {
+    .box-shadow(9px 16px 15px -2px rgba(0,0,0,0.51));
     display: block;
     position: absolute;
     z-index: 3;
@@ -92,9 +97,11 @@ a {
     margin-bottom: -26px;
     padding-bottom: 26px;
     background-color: @white;
+    box-shadow: none;
   }
 
   .collections-container.collapsed {
+    box-shadow: none;
     margin-bottom: -26px;
     padding-bottom: 26px;
     background: transparent; 
@@ -172,11 +179,11 @@ a {
   }
 
   .selected .cat-title {
-
     background-color: @white;
   }
 
   .selected .sub-cat {
+    .box-shadow(-1px 10px 15px -2px rgba(0,0,0,0.51););
     position: absolute;
     display: block;
     z-index: 2;

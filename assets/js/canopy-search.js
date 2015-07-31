@@ -15,6 +15,10 @@ BCCANOPY.search = {
       var $searchInput = $('.search-input');
       var $closeIcon = $('.search-container .fa-times');
       
+      if ($(window).width() > 900) {
+        return false;
+      }
+      
       if ($searchContainer.hasClass('active')) {
         return false;
 
