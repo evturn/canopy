@@ -8,3 +8,9 @@
 + main video and navbar fixed on scroll
 
 -Set height on canopy for breakpoints and add that to padding-top on collections content
+
+
+
++ margin canopy vs. grid
+
++ click category for container

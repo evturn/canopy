@@ -11,8 +11,6 @@
   font-family: @serif;
   font-weight: 800;
   cursor: pointer;
-  padding-bottom: 25px;
-  margin-bottom: -25px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: -15px;
@@ -26,6 +24,10 @@
   .open {
     .transform-rotate(90deg);
   }
+}
+
+.collections-title {
+  margin-top: 15px;
 }
 
 .collections-list {
@@ -74,6 +76,13 @@ a {
   }
 }
 
+
+@media (min-width: @md) {
+
+  .title-container {
+    height: 40px;
+  }
+}
 
 
 // Desktop
