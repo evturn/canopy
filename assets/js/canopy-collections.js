@@ -81,7 +81,6 @@ BCCANOPY.collections = {
     var $inlineContainer = $('.collections-container');
     var windowWidth = $(window).width();
     var ulHeight = $ul.width();
-    console.log(ulHeight);
 
     if (ulHeight > 900 && windowWidth > 800) {
 
