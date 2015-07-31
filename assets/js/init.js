@@ -7,6 +7,6 @@ $(document).ready(function() {
 
 $(window).resize(function () {
   BCCANOPY.navbar.resize();
-  BCCANOPY.collections.detachAndAppendList();
+  BCCANOPY.collections.checkListWidth();
   BCCANOPY.grid.init();
 });

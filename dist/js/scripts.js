@@ -120,9 +120,10 @@ BCCANOPY.collections = {
   init: function() {
     BCCANOPY.collections.toggleOnCollectionsTitle();
     BCCANOPY.collections.toggleSubcategory();
-    BCCANOPY.collections.detachAndAppendList();
+    BCCANOPY.collections.checkListWidth();
     BCCANOPY.collections.appendCaretToParent();
     BCCANOPY.collections.highlightTitleContainer();
+    BCCANOPY.collections.checkListWidth();
   },
 
 
@@ -132,8 +133,6 @@ BCCANOPY.collections = {
       var $collectionsContainer = $('.collections-container');
       var $ul = $('.collections-list');
       var $titleContainer = $('.title-container');
-
-      console.log($ul.parents($collectionsContainer));
 
       if ($ul.parents($collectionsContainer) && $titleContainer.hasClass('closed')) {
         $collectionsContainer.removeClass('uncollapsed');
@@ -145,6 +144,32 @@ BCCANOPY.collections = {
       }
 
     });
+  },
+
+  checkListWidth: function() {
+    var windowWidth = $(window).width();
+    var width = $('.collections-list li').outerWidth(true);
+    var all = $('.collections-list li').length;
+    var subcats = $('.collections-list li ul li').length;
+
+    var total = width * (all - subcats);
+    var percentageOccupied = total / windowWidth;
+    console.log(total);
+    console.log(windowWidth);
+    console.log(percentageOccupied);
+
+    if (windowWidth > 800) {
+
+      if (percentageOccupied >= 0.70) {
+        BCCANOPY.collections.resize();
+        
+      } else if (percentageOccupied < 0.70) {
+        BCCANOPY.collections.ignoreResize();
+      }
+
+    }
+
+
   },
 
   toggleOnCollectionsTitle: function() {
@@ -214,7 +239,7 @@ BCCANOPY.collections = {
     });
   },
 
-  detachAndAppendList: function() {
+  resize: function() {
     var $titleContainer = $('.title-container');
     var $outsideContainer = $('.collections-resize');
     var $ul = $('.collections-list');
@@ -222,17 +247,10 @@ BCCANOPY.collections = {
     var windowWidth = $(window).width();
     var ulHeight = $ul.width();
 
-    if (ulHeight > 900 && windowWidth > 800) {
-
       $ul.detach();
       $outsideContainer.append($ul);
       $titleContainer.addClass('resize-visible');
       $titleContainer.css({'display': 'inline-block'});
-
-    } 
-    else {
-      BCCANOPY.collections.ignoreResize();
-    }
 
   },
 
@@ -269,6 +287,6 @@ $(document).ready(function() {
 
 $(window).resize(function () {
   BCCANOPY.navbar.resize();
-  BCCANOPY.collections.detachAndAppendList();
+  BCCANOPY.collections.checkListWidth();
   BCCANOPY.grid.init();
 });
