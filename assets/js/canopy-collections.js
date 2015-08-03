@@ -51,10 +51,10 @@ BCCANOPY.collections = {
 
     if (windowWidth > 1100) {
 
-      if (percentageOccupied >= 0.80) {
+      if (percentageOccupied >= 0.75) {
         BCCANOPY.collections.resize();
         
-      } else if (percentageOccupied < 0.80) {
+      } else if (percentageOccupied < 0.75) {
         $('.title-container').addClass('closed');
         $('.collections-container').removeClass('uncollapsed');
         $('.collections-container').addClass('collapsed');

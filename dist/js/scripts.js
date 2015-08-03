@@ -82,11 +82,11 @@ BCCANOPY.search = {
       var $searchInput = $('.search-input');
       var $closeIcon = $('.search-container .fa-times');
       
-      if ($(window).width() > 900) {
+      if ($(window).width() > 800) {
         return false;
       }
       
-      if ($searchContainer.hasClass('active')) {
+      if ($searchContainer.hasClass('active') || $searchContainer.hasClass('showing')) {
         return false;
 
       } else {
@@ -172,10 +172,10 @@ BCCANOPY.collections = {
 
     if (windowWidth > 1100) {
 
-      if (percentageOccupied >= 0.80) {
+      if (percentageOccupied >= 0.75) {
         BCCANOPY.collections.resize();
         
-      } else if (percentageOccupied < 0.80) {
+      } else if (percentageOccupied < 0.75) {
         $('.title-container').addClass('closed');
         $('.collections-container').removeClass('uncollapsed');
         $('.collections-container').addClass('collapsed');
@@ -296,15 +296,16 @@ BCCANOPY.collections = {
   },
 
 };
+  BCCANOPY.collections.init();
 $(document).ready(function() {
   BCCANOPY.navbar.init();
   BCCANOPY.search.init();
-  BCCANOPY.collections.init();
+  BCCANOPY.collections.checkListWidth();
   BCCANOPY.grid.init();
 });
 
 $(window).resize(function () {
-  BCCANOPY.navbar.resize();
   BCCANOPY.collections.checkListWidth();
+  BCCANOPY.navbar.resize();
   BCCANOPY.grid.init();
 });

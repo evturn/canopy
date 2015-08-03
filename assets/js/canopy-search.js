@@ -15,11 +15,11 @@ BCCANOPY.search = {
       var $searchInput = $('.search-input');
       var $closeIcon = $('.search-container .fa-times');
       
-      if ($(window).width() > 900) {
+      if ($(window).width() > 800) {
         return false;
       }
       
-      if ($searchContainer.hasClass('active')) {
+      if ($searchContainer.hasClass('active') || $searchContainer.hasClass('showing')) {
         return false;
 
       } else {
