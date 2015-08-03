@@ -19,7 +19,7 @@ BCCANOPY.search = {
         return false;
       }
       
-      if ($searchContainer.hasClass('active') || $searchContainer.hasClass('showing')) {
+      if ($searchContainer.hasClass('active')) {
         return false;
 
       } else {

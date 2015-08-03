@@ -5,6 +5,10 @@
   margin-left: -15px;
   padding-left: 15px;
   background-color: @white;
+
+  @media (min-width: @md) {
+    width: 60%;
+  }
 }
 
 .collections-container.uncollapsed {
@@ -12,7 +16,7 @@
 
   @media (min-width: @md) {
     margin-bottom: -26px;
-    padding-bottom: 33px;
+    padding-bottom: 26px;
     background-color: @white;
   }
     
@@ -58,7 +62,7 @@
 .collections-title {
   margin-top: 15px;
 
-  @media (min-width: 800px) {
+  @media (min-width: @md) {
     margin-top: 20px;
   }
 }
@@ -76,6 +80,10 @@
     padding-left: 15px;
     top: 50px;
     left: -15px;
+
+    @media (min-width: @md) {
+      width: 60%;
+    }
   }
 
    li {
