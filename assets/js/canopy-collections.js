@@ -1,12 +1,12 @@
 BCCANOPY.collections = {
 
   init: function() {
+    BCCANOPY.collections.appendCaretToParent(function() {
+      BCCANOPY.collections.checkListWidth();
+    });
     BCCANOPY.collections.toggleOnCollectionsTitle();
     BCCANOPY.collections.toggleSubcategory();
-    BCCANOPY.collections.checkListWidth();
-    BCCANOPY.collections.appendCaretToParent();
     BCCANOPY.collections.highlightTitleContainer();
-    BCCANOPY.collections.checkListWidth();
   },
 
 
@@ -31,23 +31,37 @@ BCCANOPY.collections = {
 
   checkListWidth: function() {
     var windowWidth = $(window).width();
-    var width = $('.collections-list li').outerWidth(true);
-    var all = $('.collections-list li').length;
-    var subcats = $('.collections-list li ul li').length;
+    var $category = $('.cat-title').parent();
+    var widths = [];
+    $.each($category, function() {
+      var categoryWidth = $(this).outerWidth(true);
 
-    var total = width * (all - subcats);
-    var percentageOccupied = total / windowWidth;
-    console.log(total);
+      console.log(categoryWidth);
+      widths.push(categoryWidth);
+
+    });
+
+    var width = widths.reduce(function(a, b) {
+      return a + b;
+    });
+    var percentageOccupied = width / windowWidth;
+    console.log(width);
     console.log(windowWidth);
     console.log(percentageOccupied);
 
-    if (windowWidth > 800) {
+    if (windowWidth > 1100) {
 
-      if (percentageOccupied >= 0.70) {
+      if (percentageOccupied >= 0.80) {
         BCCANOPY.collections.resize();
         
-      } else if (percentageOccupied < 0.70) {
+      } else if (percentageOccupied < 0.80) {
+        $('.title-container').addClass('closed');
+        $('.collections-container').removeClass('uncollapsed');
+        $('.collections-container').addClass('collapsed');
+        $('.collections-list').removeClass('visible');
+        $('.fa-caret-right').removeClass('open');
         BCCANOPY.collections.ignoreResize();
+
       }
 
     }
