@@ -78,6 +78,7 @@
     z-index: 3;
     width: 70%;
     padding-left: 15px;
+    padding-bottom: 15px;
     top: 50px;
     left: -15px;
 
@@ -87,8 +88,15 @@
   }
 
    li {
-    margin: 15px 30px 15px;
-    display: block;
+    margin-top: 10px;
+
+    @media (min-width: 1100px) {
+      margin-top: 0;
+      margin-bottom: -20px;
+      padding-top: 20px;
+      margin-right: 30px;
+      display: block;
+    }
   }
 }
   
@@ -106,6 +114,15 @@
 .sub-cat {
   display: block;
   padding: 5px;
+
+  li {
+    padding: 5px;
+
+    @media (min-width: @md) {
+      padding: 0;
+      margin-top: 10px;
+    }
+  }
 
 }
 
@@ -168,8 +185,8 @@ a {
   .cat-title {
     margin-right: 20px;
     padding-right: -20px;
-    margin-bottom: -20px;
-    padding-bottom: 30px; 
+    margin-bottom: -30px;
+    padding-bottom: 30px;
     margin-left: -10px;
     padding-left: 10px;
     background: transparent;
@@ -199,7 +216,7 @@ a {
     display: block;
     z-index: 2;
     font-size: 18px;
-    top: 54px;
+    top: 67px;
     left: -10px;
     background-color: @white;
 
