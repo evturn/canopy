@@ -1,4 +1,17 @@
-.collections-resize {
+.collections-resize .collections-list {
+  display: none;
+
+  &.visible {
+    display: inline-block;
+
+   .subcat {
+      top: 40px;
+      left: -10px;
+    }
+  }
+}
+
+.collections-container .collections-resize {
   position: absolute;
   z-index: 2;
   right: 0;
@@ -17,14 +30,25 @@
 
     li {
       padding-top: 0;
+      
     }
-  }
 
-  .cat-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: inherit;
-    padding-left: 10px;
+    .selected {
+
+      .sub-cat {
+        top: 40px;
+        left: -10px;
+      }
+      
+    }
+
+    .cat-title {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      padding: inherit;
+      padding-left: 10px;
+    }
+
   }
 }
 
