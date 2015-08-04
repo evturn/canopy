@@ -128,6 +128,7 @@ BCCANOPY.collections = {
     BCCANOPY.collections.toggleOnCollectionsTitle();
     BCCANOPY.collections.toggleSubcategory();
     BCCANOPY.collections.highlightTitleContainer();
+    BCCANOPY.collections.renderMobile();
   },
 
 
@@ -150,6 +151,23 @@ BCCANOPY.collections = {
     });
   },
 
+  renderMobile: function() {
+    var windowWidth = $(window).width();
+    var $ul = $('.collections-list');
+    var $resize = $('.collections-resize');
+    var $container = $('.collections-container');
+
+    if (windowWidth > 1100) {
+      return false;
+
+    } 
+    else if (windowWidth < 1100 && $resize.children().length > 0) {
+
+      $ul.detach();
+      $container.append($ul);
+    }
+  },
+
   checkListWidth: function() {
     var windowWidth = $(window).width();
     var $category = $('.cat-title').parent();
@@ -157,7 +175,6 @@ BCCANOPY.collections = {
     $.each($category, function() {
       var categoryWidth = $(this).outerWidth(true);
 
-      console.log(categoryWidth);
       widths.push(categoryWidth);
 
     });
@@ -166,9 +183,6 @@ BCCANOPY.collections = {
       return a + b;
     });
     var percentageOccupied = width / windowWidth;
-    console.log(width);
-    console.log(windowWidth);
-    console.log(percentageOccupied);
 
     if (windowWidth > 1100) {
 
@@ -306,6 +320,7 @@ $(document).ready(function() {
 
 $(window).resize(function () {
   BCCANOPY.collections.checkListWidth();
+  BCCANOPY.collections.renderMobile();
   BCCANOPY.navbar.resize();
   BCCANOPY.grid.init();
 });

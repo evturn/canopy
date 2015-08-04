@@ -9,4 +9,10 @@
 +click category for container
 +extend collections-resize to fill window width
 
--searchbar on desktop view
++searchbar on desktop view
+
+-never have collections-list in resize if window should show mobile dropdown
+
+-fix resize div positioning
+-secure window resize function
+-move search bar up a pixel or two
