@@ -11,8 +11,8 @@
 
 +searchbar on desktop view
 
--never have collections-list in resize if window should show mobile dropdown
++never have collections-list in resize if window should show mobile dropdown
 
--fix resize div positioning
--secure window resize function
++fix resize div positioning
++secure window resize function
 -move search bar up a pixel or two
